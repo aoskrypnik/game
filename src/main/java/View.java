@@ -12,6 +12,9 @@ public class View {
     public static final String CONGRATS = "Congratulations!!! You have guessed!!!";
     public static final String NUMBER_OF_ATTEMPTS = "The total number of attempts is ";
     public static final String WONDERED_NUMBER = "The number was wondered!";
+    public static final String INPUT_MIN_BARRIER = "Please input min barrier (at least 0): ";
+    public static final String INPUT_MAX_BARRIER = "Please input max barrier (less than 1_000_000_000): ";
+    public static final String NO_RANGE_EXISTS = "With such inputs no range exists. Bigger diapason needed.";
     public static final String NULL_STRING = "";
 
     public View(Model model) {
@@ -38,6 +41,16 @@ public class View {
                 break;
             case OutOfRange:
                 printMessage(View.OUT_OF_RANGE);
+                break;
+            case InputMaxBarrier:
+                printMessage(INPUT_MAX_BARRIER);
+                break;
+            case InputMinBarrier:
+                printMessage(INPUT_MIN_BARRIER);
+                break;
+            case NoRangeExists:
+                printMessage(WRONG_INPUT);
+                printMessage(NO_RANGE_EXISTS);
                 break;
         }
     }

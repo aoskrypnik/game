@@ -8,16 +8,18 @@ public class Model {
     private int wonderedNumber;
     private List<String> statistics;
 
-    public Model(){
-        minNumber = Constants.LOW_BORDER;
-        maxNumber = Constants.HIGH_BORDER;
-        wonderedNumber = getRandomNumber();
+    public Model() {
         statistics = new ArrayList<String>();
     }
 
     public int getRandomNumber() {
         Random random = new Random();
         return ((minNumber + 1) + random.nextInt(maxNumber - minNumber - 1));
+    }
+
+    public int getRandomNumber(int yourMinInput, int youMaxInput) {
+        Random random = new Random();
+        return ((yourMinInput + 1) + random.nextInt(youMaxInput - yourMinInput - 1));
     }
 
     public void setMaxNumber(int maxNumber) {
@@ -27,6 +29,8 @@ public class Model {
     public void setMinNumber(int minNumber) {
         this.minNumber = minNumber;
     }
+
+    public void setWonderedNumber(int wonderedNumber) { this.wonderedNumber = wonderedNumber; }
 
     public int getWonderedNumber() {
         return wonderedNumber;
